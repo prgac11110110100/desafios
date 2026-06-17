@@ -1,3 +1,4 @@
+/* Copyright © 2015 Oracle and/or its affiliates. All rights reserved. */
 package com.example.employees;
 
 import java.util.ArrayList;
@@ -5,7 +6,7 @@ import java.util.List;
 
 
 public class EmployeeList {
-    private static final List<Employee> employeeList = new ArrayList<>();
+    private static final List<Employee> employeeList = new ArrayList();
     
     private EmployeeList(){
     }

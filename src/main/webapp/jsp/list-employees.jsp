@@ -9,10 +9,10 @@
         <div class="container">
             <h2>Employees</h2>
             <!--Search Form -->
-            <form action="<%= request.getContextPath() %>/employee" method="get" id="seachEmployeeForm" role="form">
+            <form action="/employee" method="get" id="seachEmployeeForm" role="form">
                 <input type="hidden" id="searchAction" name="searchAction" value="searchByName">
                 <div class="form-group col-xs-5">
-                    <input type="text" name="employeeName" id="employeeName" class="form-control" required="${true}" placeholder="Type the Name or Last Name of the employee"/>                    
+                    <input type="text" name="employeeName" id="employeeName" class="form-control" required="true" placeholder="Type the Name or Last Name of the employee"/>                    
                 </div>
                 <button type="submit" class="btn btn-info">
                     <span class="glyphicon glyphicon-search"></span> Search
@@ -27,7 +27,7 @@
                     ${message}
                 </div>
             </c:if> 
-            <form action="<%= request.getContextPath() %>/employee" method="post" id="employeeForm" role="form" >              
+            <form action="/employee" method="post" id="employeeForm" role="form" >              
                 <input type="hidden" id="idEmployee" name="idEmployee">
                 <input type="hidden" id="action" name="action">
                 <c:choose>
@@ -52,7 +52,7 @@
                                 </c:if>
                                 <tr class="${classSucess}">
                                     <td>
-                                        <a href="<%= request.getContextPath() %>/employee?idEmployee=${employee.id}&searchAction=searchById">${employee.id}</a>
+                                        <a href="/employee?idEmployee=${employee.id}&searchAction=searchById">${employee.id}</a>
                                     </td>                                    
                                     <td>${employee.name}</td>
                                     <td>${employee.lastName}</td>
@@ -64,7 +64,7 @@
                                            onclick="document.getElementById('action').value = 'remove';document.getElementById('idEmployee').value = '${employee.id}';
                                                     
                                                     document.getElementById('employeeForm').submit();"> 
-                                            <span class="glyphicon glyphicon-trash"> </span>
+                                            <span class="glyphicon glyphicon-trash"/>
                                         </a>
                                                    
                                     </td>

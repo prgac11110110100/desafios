@@ -2,4 +2,5 @@
 .classpath 
 .project  
 target/   
-*_webxml
+*_webxml 
+prepar*

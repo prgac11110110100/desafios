@@ -3,6 +3,10 @@ package com.example.employees;
 
 import java.util.concurrent.atomic.AtomicLong;
 
+/**
+ *
+ * @author luperalt
+ */
 public class Employee {
 
     private long id;

@@ -1,4 +1,4 @@
-/* Copyright Â© 2015 Oracle and/or its affiliates. All rights reserved. */
+/* Copyright © 2015 Oracle and/or its affiliates. All rights reserved. */
 package com.example.employees;
 
 import java.io.IOException;
@@ -7,18 +7,20 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.servlet.RequestDispatcher;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-@WebServlet( "/employee")
+@WebServlet(
+        name = "EmployeeServlet",
+        urlPatterns = {"/employee"}
+)
 public class EmployeeServlet extends HttpServlet {
 
-    private static final long serialVersionUID = 4879943638044076696L;
-	EmployeeService employeeService = new EmployeeService();
+    EmployeeService employeeService = new EmployeeService();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -61,7 +63,7 @@ public class EmployeeServlet extends HttpServlet {
         forwardListEmployees(req, resp, result);
     }
 
-    private void forwardListEmployees(HttpServletRequest req, HttpServletResponse resp, List<Employee> employeeList)
+    private void forwardListEmployees(HttpServletRequest req, HttpServletResponse resp, List employeeList)
             throws ServletException, IOException {
         String nextJSP = "/jsp/list-employees.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
